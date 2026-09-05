@@ -3,7 +3,7 @@
   "FriendlyName": "Discount in cart amount over or range of amount",
   "SystemName": "DiscountRequirement.DiscountInCart",
   "Version": "1.00",
-  "SupportedVersions": [ "4.50" ],
+  "SupportedVersions": [ "4.60" ],
   "Author": "Silver Bilgi Teknolojileri",
   "DisplayOrder": 1,
   "FileName": "Nop.Plugin.DiscountRules.DiscountInCart.dll",

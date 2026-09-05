@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Copyright>Copyright © Silver Bilgi Teknolojileri, Ltd</Copyright> 
     <Company>Silver Bilgi Teknolojileri, Ltd</Company> 
     <Authors>Silver Bilgi Teknolojileri, Ltd</Authors> 
