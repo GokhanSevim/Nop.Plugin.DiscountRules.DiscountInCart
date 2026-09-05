@@ -17,7 +17,7 @@ namespace Nop.Plugin.DiscountRules.DiscountInCart.Validators
                 .WithMessageAwait(localizationService.GetResourceAsync("Plugins.DiscountRules.DiscountInCart.Fields.DiscountId.Required"));
             RuleFor(model => model.CartAmount)
                 .NotEmpty()
-                .WithMessageAwait(localizationService.GetResourceAsync("Plugins.DiscountRules.DiscountInCart.Fields.SpentAmount.Required"));
+                .WithMessageAwait(localizationService.GetResourceAsync("Plugins.DiscountRules.DiscountInCart.Fields.CartAmount.Required"));
         }
     }
 }
