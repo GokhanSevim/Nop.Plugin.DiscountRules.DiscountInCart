@@ -20,23 +20,18 @@ namespace Nop.Plugin.DiscountRules.DiscountInCart.Controllers
     public class DiscountRulesDiscountInCartController : BasePluginController
     {
         private readonly IDiscountService _discountService;
-        private readonly IPermissionService _permissionService;
         private readonly ISettingService _settingService;
 
         public DiscountRulesDiscountInCartController(IDiscountService discountService,
-            ISettingService settingService,
-            IPermissionService permissionService)
+            ISettingService settingService)
         {
             _discountService = discountService;
-            _permissionService = permissionService;
             _settingService = settingService;
         }
 
+        [CheckPermission(StandardPermission.Promotions.DISCOUNTS_VIEW)]
         public async Task<IActionResult> Configure(int discountId, int? discountRequirementId)
         {
-            if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.ManageDiscounts))
-                return Content("Access denied");
-
             var discount = await _discountService.GetDiscountByIdAsync(discountId);
             if (discount == null)
                 throw new ArgumentException("Discount could not be loaded");
@@ -61,11 +56,9 @@ namespace Nop.Plugin.DiscountRules.DiscountInCart.Controllers
         }
 
         [HttpPost]
+        [CheckPermission(StandardPermission.Promotions.DISCOUNTS_CREATE_EDIT_DELETE)]
         public async Task<IActionResult> Configure(RequirementModel model)
         {
-            if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.ManageDiscounts))
-                return Content("Access denied");
-
             if (ModelState.IsValid)
             {
                 //load the discount
