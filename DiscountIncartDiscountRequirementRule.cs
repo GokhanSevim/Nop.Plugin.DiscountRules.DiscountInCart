@@ -144,7 +144,7 @@ namespace Nop.Plugin.DiscountRules.DiscountInCart
         public override async Task InstallAsync()
         {
             //locales
-            await _localizationService.AddLocaleResourceAsync(new Dictionary<string, string>
+            await _localizationService.AddOrUpdateLocaleResourceAsync(new Dictionary<string, string>
             {
                 ["Plugins.DiscountRules.DiscountInCart.Fields.Amount"] = "Required cart amount or range of amounts. [$100 or $100-$200]",
                 ["Plugins.DiscountRules.DiscountInCart.Fields.Amount.Hint"] = "Cart total $100 and more or range of $100-$200",
